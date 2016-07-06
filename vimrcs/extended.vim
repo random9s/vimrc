@@ -34,9 +34,24 @@ set guioptions-=l
 set guioptions-=L
 
 " Colorscheme
-set background=dark
-colorscheme peaksea
-
+ if has("gui_running")
+     set background=dark
+     colorscheme peaksea
+ else
+     autocmd BufEnter * colorscheme default
+     autocmd BufEnter *.php colorscheme wellsokai 
+     autocmd BufEnter *.go colorscheme skittles_berry 
+     autocmd BufEnter *.c colorscheme triplejelly 
+     autocmd BufEnter *.sh colorscheme darkzen
+     autocmd BufEnter *.py colorscheme kkruby
+     autocmd BufEnter *.html colorscheme harlequin
+     autocmd BufEnter *.css colorscheme harlequin
+     autocmd BufEnter *.js colorscheme Tomorrow-Night-Eighties
+     autocmd BufEnter *.txt colorscheme greenvision
+     autocmd BufEnter *.vim colorscheme skittles_berry
+     autocmd BufEnter *.asm colorscheme wuye
+     let g:colors_name="desert"
+ endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fast editing and reloading of vimrc configs
